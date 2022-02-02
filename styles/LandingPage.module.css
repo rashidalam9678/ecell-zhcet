@@ -1,0 +1,7 @@
+.landing_page{
+    height: 100vh;
+    background-color: var(--primary_white);
+}
+.landing_page h1{
+    color: var(--primary_blue);
+}

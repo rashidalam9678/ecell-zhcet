@@ -1,13 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@100;200;300;400;500;600;700&display=swap');
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+}
+:root {
+  --primary_blue: #14274E;
+  --secondary_blue: #394867;
+  --primary_white: #F1F6F9;
+  --secondary_white: #9BA4B4;
+
 }
 
 a {
-  color: inherit;
   text-decoration: none;
 }
 
