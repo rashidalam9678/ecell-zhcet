@@ -1,9 +1,9 @@
 
 
-const team = () => {
+const Team = () => {
   return (
     <main>
-        
+        Team
     </main>
   )
 }
