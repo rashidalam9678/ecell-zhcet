@@ -1,0 +1,11 @@
+.main_container{
+    min-height: 100vh;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+@media screen and (min-width: 480px) {
+    .main_container {
+        padding: 50px 100px;
+    }
+  }
