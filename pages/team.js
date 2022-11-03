@@ -8,4 +8,4 @@ const Team = () => {
   )
 }
 
-export default team
+export default Team
