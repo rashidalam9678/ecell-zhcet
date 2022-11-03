@@ -26,6 +26,7 @@ export default function Register() {
                             email: "",
                             phoneNumber: null,
                             address: "",
+                            paymentStatus:false
                         }}
                         onChange={(values) => {
                             setFormData(values)
@@ -42,10 +43,11 @@ export default function Register() {
                                     branch: values.branch,
                                     email: values.email,
                                     phoneNumber: values.phoneNumber,
-                                    address: values.address
+                                    address: values.address,
+                                    paymentStatus:false
                                 });
                                 console.log("Document written with ID: ", docRef.id);
-                                router.push("/success")
+                                router.push("/member/payment")
                             } catch (e) {
                                 console.error("Error adding document: ", e);
                             }
@@ -183,7 +185,7 @@ export function FormikStepper({ children, ...props }) {
                                 color="primary"
                                 type="submit"
                             >
-                                {isSubmitting ? 'Submitting' : isLastStep() ? 'Make payment' : 'Next'}
+                                {isSubmitting ? 'Submitting' : isLastStep() ? 'Submit' : 'Next'}
                             </Button>
                         </Grid>
                     </Grid>
