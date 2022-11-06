@@ -21,12 +21,11 @@ export default function Register() {
                             enrollmentNumber: "",
                             facultyNumber: "",
                             course: '',
-                            yearOfStudy: null,
+                            yearOfStudy: "",
                             branch: '',
                             email: "",
-                            phoneNumber: null,
-                            address: "",
-                            paymentStatus:false
+                            phoneNumber: "",
+                            paymentStatus: false
                         }}
                         onChange={(values) => {
                             setFormData(values)
@@ -43,8 +42,7 @@ export default function Register() {
                                     branch: values.branch,
                                     email: values.email,
                                     phoneNumber: values.phoneNumber,
-                                    address: values.address,
-                                    paymentStatus:false
+                                    paymentStatus: false
                                 });
                                 console.log("Document written with ID: ", docRef.id);
                                 router.push("/member/payment")
@@ -53,51 +51,53 @@ export default function Register() {
                             }
                         }}
                     >
-                        <FormikStep label="Personal Details" >
-                            <Box paddingBottom={2} paddingTop={6}>
-                                <Field paddingTop={0} fullWidth name="firstName" component={TextField} label="First Name" />
-                            </Box>
-                            <Box paddingBottom={2}>
-                                <Field fullWidth name="lastName" component={TextField} label="Last Name" />
-                            </Box>
-                            <Box paddingBottom={2}>
-                                <Field fullWidth name="enrollmentNumber" component={TextField} label="Enrollement Number" />
-                            </Box>
-                            <Box paddingBottom={2}>
-                                <Field fullWidth name="facultyNumber" component={TextField} label="Faculty Number" />
-                            </Box>
-                            <Box paddingBottom={2}>
-                                <Field fullWidth name="course" component={TextField} label="Course" />
-                            </Box>
-                            <Box paddingBottom={2}>
-                                <Field fullWidth  name="yearOfStudy" component={TextField} label="Year of study" />
-                            </Box>
-
-                            <Box paddingBottom={2}>
-                                <Field fullWidth name="branch" component={TextField} label="Branch Name" />
-                            </Box>
-
-                        </FormikStep>
-                        <FormikStep
-                            label="Contact Details"
+                        <FormikStep label="Personal Details"
                             validationSchema={yup.object({
+                                firstName:yup.string().required("Required"),
+                                lastName:yup.string().required("Required"),
+                                enrollmentNumber:yup.string().required("Required"),
+                                facultyNumber:yup.string().required("Required"),
+                                course:yup.string().required("Required"),
+                                yearOfStudy:yup.string().required("Required"),
+                                branch:yup.string().required("Required"),
                                 email: yup.string().email('Invalid email').required('Required'),
                                 phoneNumber: yup.number().required('Required'),
-                                address: yup.string().required("Required")
+
                             })}
                         >
-                            <Box paddingBottom={2}>
-                                <Field fullWidth type="email" name="email" component={TextField} label="Email" />
+
+                            <Box paddingBottom={2} paddingTop={6}>
+                                <Field variant="standard" paddingTop={0} fullWidth name="firstName" component={TextField} label="First Name" />
                             </Box>
                             <Box paddingBottom={2}>
-                                <Field fullWidth type="number" name="phoneNumber" component={TextField} label="Phone Number" />
+                                <Field variant="standard" fullWidth name="lastName" component={TextField} label="Last Name" />
                             </Box>
                             <Box paddingBottom={2}>
-                                <Field fullWidth name="address" component={TextField} label="Address" />
+                                <Field variant="standard" fullWidth name="enrollmentNumber" component={TextField} label="Enrollement Number" />
                             </Box>
+                            <Box paddingBottom={2}>
+                                <Field variant="standard" fullWidth name="facultyNumber" component={TextField} label="Faculty Number" />
+                            </Box>
+                            <Box paddingBottom={2}>
+                                <Field variant="standard" fullWidth name="course" component={TextField} label="Course" />
+                            </Box>
+                            <Box paddingBottom={2}>
+                                <Field type="number" variant="standard" fullWidth  name="yearOfStudy" component={TextField} label="Year of study" />
+                            </Box>
+
+                            <Box paddingBottom={2}>
+                                <Field variant="standard" fullWidth name="branch" component={TextField} label="Branch Name" />
+                            </Box>
+                            <Box paddingBottom={2}>
+                                <Field variant="standard" fullWidth type="email" name="email" component={TextField} label="Email" />
+                            </Box>
+                            <Box paddingBottom={2}>
+                                <Field variant="standard" fullWidth type="number" name="phoneNumber" component={TextField} label="Phone Number" />
+                            </Box>
+
                         </FormikStep>
 
-                        <FormikStep label="Make Payment">
+                        <FormikStep label="Payment Details">
                             <Box paddingBottom={2}>
                                 <p>Membership Fees is Rs 150</p>
                             </Box>

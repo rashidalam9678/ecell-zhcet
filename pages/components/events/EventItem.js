@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import classes from './event-item.module.css';
+import styles from './event-item.module.css';
 
 function EventItem(props) {
 
@@ -12,26 +12,23 @@ function EventItem(props) {
         year: 'numeric'
     });
 
-    const formattedAddress = location.replace(', ', '\n')
-
-    const exploreLink = `/events/${id}`
 
     return (
-        <li className={classes.item}>
+        <li className={styles.item}>
             <img src={'/' + image} alt={title} />
-            <div className={classes.content}>
-                <div className={classes.summary}>
+            <div className={styles.content}>
+                <div className={styles.summary}>
                     <h2>{title}</h2>
-                    <div className={classes.date}>
+                    <div className={styles.date}>
                         <time>{humanReadableDate}</time>
                     </div>
                 </div>
-                <div className={classes.address}>
-                    <address>{formattedAddress}</address>
+                <div className={styles.address}>
+                    <address>{location}</address>
                 </div>
             </div>
-            <div className={classes.actions}>
-                <Link href={`events/${id}`} className={classes.btn}>
+            <div className={styles.actions}>
+                <Link href={`events/${id}`} className={styles.btn}>
                    Explore Event
                 </Link>
             </div>

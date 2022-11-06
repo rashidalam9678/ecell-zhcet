@@ -1,0 +1,63 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+}
+
+.container img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.details, .timeline, .rules{
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+  .details h1, .timeline h1, .rules h1{
+    text-align: center;
+    position: relative;
+    max-width: 100%;
+    margin: 100px auto;
+
+}
+.details h1:before, .rules h1:before, .timeline h1:before{
+    content:" ";
+    height: 4px;
+    width: 40%;
+    background: #02c37e;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+   
+}
+.details h1:after, .rules h1:after, .timeline h1:after{
+    content:" ";
+  height: 4px;
+  width: 40%;
+  background: #02c37e;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+@media screen and (min-width: 480px) {
+    .mobile_img{
+        display: none;
+    }
+  }
+  @media screen and (max-width: 480px){
+    .desktop_img{
+        display: none;
+    }
+    .details h1:after, .rules h1:after, .timeline h1:after{
+        width: 30%;
+    }
+    .details h1:before, .rules h1:before, .timeline h1:before{
+        width: 30%;
+    }
+  }
