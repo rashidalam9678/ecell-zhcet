@@ -1,5 +1,5 @@
 
-import EventList from "../components/events/EventList";
+import EventList from ".../../components/events/EventList";
 import { getAllEvents } from "../../constants/event-data";
 
 function AllEventsPage() {
