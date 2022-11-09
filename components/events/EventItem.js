@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import styles from './event-item.module.css';
 
@@ -15,16 +16,13 @@ function EventItem(props) {
 
     return (
         <li className={styles.item}>
-            <img src={'/' + image} alt={title} />
+            <Image src={'/' + image} alt={title} width={100} height={100}/>
             <div className={styles.content}>
                 <div className={styles.summary}>
                     <h2>{title}</h2>
                     <div className={styles.date}>
                         <time>{humanReadableDate}</time>
                     </div>
-                </div>
-                <div className={styles.address}>
-                    <address>{location}</address>
                 </div>
             </div>
             <div className={styles.actions}>

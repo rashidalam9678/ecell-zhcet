@@ -1,41 +1,62 @@
 const EVENTS = [
     {
-        id: 'ideathon',
-        title: 'Ideathon',
+        id: 'orientation',
+        title: 'Orientation',
         description: 'Ideathon is a university level competition',
         location: 'A street 25,  San Francisco',
         date: '2022-06-14',
         image: 'images/coding-event.jpg',
-        isFeatured: false
+        isFeatured: true
     },
     {
-        id: 'event2',
-        title: 'Networking Basics',
+        id: 'ideathon',
+        title: 'Ideathon',
         description: 'Making networking for introverts fun',
         location: 'Street 47, New York',
         date: '2022-06-21',
         image: 'images/network-event.jpg',
         isFeatured: true
     },
-    {
-        id: 'event2',
-        title: 'Networking Advanced',
-        description: 'Making networking for advanced use-cases',
-        location: 'Street 47, New York',
-        date: '2022-07-25',
-        image: 'images/network-event-advanced.jpg',
-        isFeatured: true
-    }
 ]
 
-export function getFeaturedEvents() {
-    return EVENTS.filter((event) => event.isFeatured);
-}
+const ACTIVITIES=[
+    {  id:1,
+        title:"Ideathon",
+        image: 'images/network-event.jpg',
+    },
+    {  id:2,
+        title:"Workshop",
+        image: 'images/network-event.jpg',
+    },
+    {  id:3,
+        title:"Pitching",
+        image: 'images/network-event.jpg',
+    },
+    {  id:4,
+        title:"Ideathon",
+        image: 'images/network-event.jpg',
+    },
+    {  id:5,
+        title:"Ideathon",
+        image: 'images/network-event.jpg',
+    },
+    {  id:6,
+        title:"Ideathon",
+        image: 'images/network-event.jpg',
+    },
+]
+
 
 export function getAllEvents() {
     return EVENTS;
 }
+export function getAllActivities() {
+    return ACTIVITIES;
+}
 
+export function getFeaturedEvents() {
+    return EVENTS.filter((event) => event.isFeatured);
+}
 export function getFilteredEvents(dateFilter) {
     const { year, month } = dateFilter;
 

@@ -1,7 +1,13 @@
 .main_container{
-    min-height: 100vh;
-    max-width: 800px;
-    margin: 20px auto;
+    height: 1000px;
+    padding: 0px 200px;
+    /* max-width: 800px; */
+    margin: 0px auto;
+    /* background-image: url("../public/images/Reg.png"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
 @media screen and (min-width: 480px) {

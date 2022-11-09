@@ -1,0 +1,30 @@
+.grid{
+    align-self: center;
+  justify-self: center;
+    position: relative;
+    width: 350px;
+    height: 250px;
+    border-radius: 5px;
+}
+.img_container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.img_container:hover{
+    opacity: 0.1;
+}
+
+.on_hover{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+.on_hover h1{
+    margin: 100px 100px;
+}
