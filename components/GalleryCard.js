@@ -16,10 +16,10 @@ const GalleryCard = ({ title, src }) => {
   return (
     <>
         <div className={styles.grid} >
-          <div className={styles.img_container} onMouseOver={MouseOver} id="img" >
+          <div className={styles.img_container}  id="img" >
             <Image src={src} layout="fill" alt="img" />
           </div>
-          {mouse && <div className={styles.on_hover} onMouseOut={MouseOut}>
+          {!mouse && <div className={styles.on_hover} onMouseOver={MouseOver} onMouseOut={MouseOut}>
             <h1>{title}</h1>
           </div>}
         </div>

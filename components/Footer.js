@@ -16,6 +16,7 @@ const Footer = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState(false)
+  const [success, setSuccess] = useState(false)
 
    async function SubmitForm(e){
     e.preventDefault()
@@ -34,10 +35,12 @@ const Footer = () => {
       setEmail("")
       setName("")
       setQuery("")
+      setSuccess(true)
     } catch (e) {
       setError(true)
       console.error("Error adding document: ", e);
       setIsSubmitting(false)
+      
     }
   }
   return (
@@ -87,10 +90,11 @@ const Footer = () => {
               color="primary"
               type="submit"
             >
-              {isSubmitting ? 'Sending' : "Send"}
+              {isSubmitting ? 'Sending...' : "Send"}
             </Button>
           </div>
           {error && <p className={styles.error}>Error while sending message please try again</p>}
+          {success&& <p className={styles.success}>Message sent successfully</p> }
         </form>
       </div >
       <div className={styles.bottom}>
