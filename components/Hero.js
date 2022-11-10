@@ -32,12 +32,12 @@ const Hero = () => {
                     <img className={styles.imgSocials} src="/images/LinkInden.png" alt="Error" /> </a></div>
                 <div> <a href="https://www.instagram.com/edc_zhcet/?hl=en " target="_blank">
                     <img className={styles.imgSocials} src="/images/insta.png" alt="Error" /> </a></div>
-                <div> <a href="# "><img className={styles.imgSocials} src="/images/Tw.png" alt="Error" /> </a></div>
+                {/* <div> <a href="# "><img className={styles.imgSocials} src="/images/Tw.png" alt="Error" /> </a></div> */}
                 {/* <!-- logo-Twitter --> */}
                 <div> <a href=" https://www.facebook.com/EcellZHCET/" target="_blank"><img className={styles.imgSocials}
                     src="/images/FB.png" alt="Error" /> </a></div>
                 {/* <!-- logo-Facebook --> */}
-                <div> <a href="# "><img className={styles.imgSocials} src="/images/Y.png" alt="Error" /> </a></div>
+                {/* <div> <a href="# "><img className={styles.imgSocials} src="/images/Y.png" alt="Error" /> </a></div> */}
             </div>
         </div>
     )

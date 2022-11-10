@@ -1,17 +1,36 @@
-.main_container{
+/* /* .main_container{
     height: 1000px;
     padding: 0px 200px;
-    /* max-width: 800px; */
     margin: 0px auto;
-    /* background-image: url("../public/images/Reg.png"); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
+}  */
+.container span{
+    font-weight: bold;
+    text-decoration: underline;
+    color: rgb(4, 102, 194);
+
 }
 
-@media screen and (min-width: 480px) {
-    .main_container {
-        padding: 50px 100px;
+.container{
+    padding: 50px;
+    /* text-align: center; */
+    min-height: 90vh;
+}
+.container h1{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.link{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+@media screen and (max-width: 720px) {
+    .container h1{
+        font-size: 25px;
     }
-  }
+}

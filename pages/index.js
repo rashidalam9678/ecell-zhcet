@@ -37,12 +37,12 @@ const activities= getAllActivities()
         <div className={styles.grid}>
           <div className={styles.wrapper}>
 
-              <GalleryCard  title="Workshop" src='/images/network-event.jpg'/>
-              <GalleryCard  title="Workshop" src='/images/network-event.jpg'/>
-              <GalleryCard  title="Workshop" src='/images/network-event.jpg'/>
-              <GalleryCard  title="Workshop" src='/images/network-event.jpg'/>
-              <GalleryCard  title="Workshop" src='/images/network-event.jpg'/>
-              <GalleryCard  title="Workshop" src='/images/network-event.jpg'/>
+              <GalleryCard  title="Workshops" src='/images/workshop.jpg'/>
+              <GalleryCard  title="Lecture Series" src='/images/lectureseries.jpg'/>
+              <GalleryCard  title="Invited Talk" src='/images/invitedtalk.png'/>
+              <GalleryCard  title="Ideathon" src='/images/webinar.jpg'/>
+              <GalleryCard  title="Webinars" src='/images/5.jpg'/>
+              <GalleryCard  title="Team Building Activities" src='/images/6.jpg'/>
 
           </div>
 

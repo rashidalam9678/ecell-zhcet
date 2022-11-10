@@ -1,129 +1,141 @@
 import styles from "../styles/footer.module.css"
 import React, { useState } from "react";
-import { Box, Button, TextareaAutosize } from "@mui/material"
-import { Field, Form, Formik } from "formik"
-import { TextField, Select } from 'formik-mui';
+// import { Field, Form, Formik } from "formik"
+// import { TextField } from 'formik-mui';
+import { Box, Button, TextareaAutosize, TextField } from "@mui/material"
 import * as yup from 'yup';
+import { collection, addDoc } from "firebase/firestore"
+import { db } from "../firebase/config"
 
-const TxtArea = () => {
-  return (
-    <>
-      <TextareaAutosize
-        aria-label="minimum height"
-        minRows={8.5}
-        minCols={25}
-        placeholder="your query"
-        style={{ width: 300 }}
-      />
-    </>
-  )
-}
+
 
 const Footer = () => {
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [query, setQuery] = useState("")
+
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState(false)
+
+   async function SubmitForm(e){
+    e.preventDefault()
+    
+    try {
+      setIsSubmitting(true)
+      setError(false)
+      const docRef = await addDoc(collection(db, "queries"), {
+        firstName: name,
+        query: query,
+        email: email,
+        status:false,
+      });
+      console.log("Document written with ID: ", docRef.id);
+      setIsSubmitting(false)
+      setEmail("")
+      setName("")
+      setQuery("")
+    } catch (e) {
+      setError(true)
+      console.error("Error adding document: ", e);
+      setIsSubmitting(false)
+    }
+  }
   return (
-    <div id="contact" className={styles.footer_container}>
+    <>
+      <div id="contact" className={styles.footer_container}>
+      <hr />
       <div className={styles.title}>
         <h3 >
           Get in touch
         </h3>
       </div>
-      <div  className={styles.contact_form}>
-        <Formik
-          initialValues={{
-            fullName: '',
-            query: '',
-            email: "",
+      <div className={styles.contact_form}>
 
-          }}
-          onSubmit={async (values) => {
-            try {
-              const docRef = await addDoc(collection(db, "queries"), {
-                fullName: values.fullName,
-                email: values.email,
-                query: values.query
+        <form onSubmit={SubmitForm} className={styles.form}>
+          <div className={styles.main}>
+            <div className={styles.left}>
 
-              });
-              console.log("Document written with ID: ", docRef.id);
-            } catch (e) {
-              console.error("Error adding document: ", e);
-            }
-          }}
-        >
-          <Form className={styles.form}>
-            <div className={styles.main}>
-              <div className={styles.left}>
+              <Box paddingBottom={2} paddingTop={6}>
+                <TextField value={name} required variant="filled" paddingTop={0} fullWidth name="fullName" label="Full Name" onChange={(e) => setName(e.target.value)} />
+              </Box>
+              <Box paddingBottom={2}>
+                <TextField value={email} variant="filled" required type="email" fullWidth name="email" label="Email"  onChange={(e) => setEmail(e.target.value)} />
+              </Box>
 
-                <Box paddingBottom={2} paddingTop={6}>
-                  <Field variant="filled" paddingTop={0} fullWidth name="fullName" component={TextField} label="Full Name" />
-                </Box>
-                <Box paddingBottom={2}>
-                  <Field variant="filled" type="email" fullWidth name="email" component={TextField} label="Email" />
-                </Box>
-
-              </div>
-              <div className={styles.right}>
-
-                <Box paddingBottom={2} paddingTop={6}>
-                  <Field variant="filled" paddingTop={0} fullWidth name="query" component={TxtArea} label="query" />
-                </Box>
-
-
-              </div>
             </div>
-            <div>
-              <Button
-                // startIcon={isSubmitting ? <CircularProgress size="1rem" /> : null}
-                // disabled={isSubmitting}
-                variant="outlined"
-                color="primary"
-                type="submit"
-              >
-                {'Submit'}
-              </Button>
+            <div className={styles.right}>
+              <Box paddingBottom={2} paddingTop={6}>
+                <TextareaAutosize
+                value={query}
+                  variant="filled" paddingTop={0} fullWidth name="query"
+                  aria-label="minimum height"
+                  minRows={8.5}
+                  required
+                  minCols={25}
+                  placeholder="your query"
+                  style={{ width: 300 }}
+                  label="query"
+                  onChange={(e) => setQuery(e.target.value)}
+                />
+              </Box>
             </div>
-          </Form>
-        </Formik>
+          </div>
+          <div>
+            <Button
+              disabled={isSubmitting}
+              variant="outlined"
+              color="primary"
+              type="submit"
+            >
+              {isSubmitting ? 'Sending' : "Send"}
+            </Button>
+          </div>
+          {error && <p className={styles.error}>Error while sending message please try again</p>}
+        </form>
       </div >
       <div className={styles.bottom}>
         <div className={styles.logo}>
           <img src="/images/EDC_LOGO_W.png" alt="img" />
           <p>Enterepreneurship Development Cell, ZHCET</p>
+          <p>Email: <strong>edcell.zhcet@gmail.com</strong></p>
         </div>
-        
+
         <div className={styles.bottom_middle}>
           <p>Follow Us</p>
           <div>
-          <a href="#">Linkedin</a>
+            <a href="https://www.linkedin.com/company/edc-zhcet-amu/?originalSubdomain=in " target="_blank">Linkedin</a>
           </div>
           <div>
-          <a href="#">Instagram</a>
+            <a href="https://www.instagram.com/edc_zhcet/?hl=en " target="_blank">Instagram</a>
           </div>
           <div>
-          <a href="#">Twitter</a>
+            <a href=" https://www.facebook.com/EcellZHCET/" target="_blank">Facebook</a>
           </div>
-          <div>
+          {/* <div>
           <a href="#">Youtube</a>
-          </div>
-            
+          </div> */}
+
         </div>
         <div className={styles.bottom_right}>
-            <p>Quick Links</p>
-            <div>
-              <a href="/register">Join Us</a>
-            </div>
-            <div>
-              <a href="/events">Events</a>
-            </div>
-            <div>
-              <a href="/team">team</a>
-            </div>
-            <div>
-              <a href="/contact">contact</a>
-            </div>
+          <p>Quick Links</p>
+          <div>
+            <a href="/member/registration">Join Us</a>
+          </div>
+          <div>
+            <a href="/events">Events</a>
+          </div>
+          <div>
+            <a href="/team">team</a>
+          </div>
+          <div>
+            <a href="#contact">contact</a>
+          </div>
         </div>
 
       </div>
     </div >
+    
+    </>
   )
 }
 

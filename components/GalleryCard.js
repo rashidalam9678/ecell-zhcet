@@ -1,30 +1,28 @@
 import Image from "next/image"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../styles/grid_card.module.css"
 
 const GalleryCard = ({ title, src }) => {
-  const [mouse, setMouse] = useState("false")
+
+  const [mouse, setMouse] = useState(false)
 
   function MouseOver(event) {
-    setMouse(true)
+    setMouse(!mouse)
 
   }
   function MouseOut(event) {
-    setMouse(false)
+    setMouse(!mouse)
   }
   return (
     <>
-
         <div className={styles.grid} >
-          <div className={styles.img_container} onMouseOver={MouseOver} >
+          <div className={styles.img_container} onMouseOver={MouseOver} id="img" >
             <Image src={src} layout="fill" alt="img" />
           </div>
           {mouse && <div className={styles.on_hover} onMouseOut={MouseOut}>
             <h1>{title}</h1>
           </div>}
         </div>
-
-
     </>
   )
 }

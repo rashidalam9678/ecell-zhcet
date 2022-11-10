@@ -97,6 +97,7 @@
     }
 
     .bottom{
+
         background-color: #000000F2;
         flex-direction: column;
         align-items: center;
@@ -109,4 +110,8 @@
     }
 
   }
+
+.error{
+    color: red;
+}  
 

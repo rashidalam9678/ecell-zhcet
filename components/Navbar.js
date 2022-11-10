@@ -12,7 +12,7 @@ const Navbar = () => {
     <header className={styles.navbar_container}>
       <nav className={styles.navbar}>
         <div>
-          <a href="#"> <img className={styles.imgEDClogo_Nav} src="/images/EDC LOGO .png" alt="Error" />
+          <a href="/"> <img className={styles.imgEDClogo_Nav} src="/images/EDC LOGO .png" alt="Error" />
           </a>
         </div>
 

@@ -1,14 +1,16 @@
 
-import EventList from "../../components/events/EventList";
-import { getAllEvents } from "../../constants/event-data";
+// import EventList from "../../components/events/EventList";
+// import { getAllEvents } from "../../constants/event-data";
+import styles from "../../styles/event.module.css"
 
 function AllEventsPage() {
-  const events = getAllEvents();
+  // const events = getAllEvents();
 
 
   return (
-    <div>
-      <EventList items={events} />
+    <div className={styles.event_container}>
+      {/* <EventList items={events} /> */}
+      <h1>Coming Soon...</h1>
     </div>
   )
 }

@@ -265,15 +265,17 @@
         display: block;
     }
     .hero_text1{
-        font-size: 20px;
-        padding: 0 10px;
+        font-size: 30px;
+        margin-top: 40px;
+        padding: 0px 10px;
     }
     .hero_text2{
-        font-size: 20px;
-        padding: auto 10px;
+        font-size: 17px;
+        margin: auto 10px;
 
     }
     .hero_text3{
+        margin-top: 50px;
         padding: auto 10px;
         font-size: 25px;
     }
