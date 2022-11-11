@@ -12,7 +12,7 @@ const Hero = () => {
                 <h2 className={styles.hero_text3}>"Unleash your potential"</h2>
             </div>
 
-            <div>
+            {/* <div>
                 <svg className={styles.waves} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
                     viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
                     <defs>
@@ -25,7 +25,7 @@ const Hero = () => {
                         <use xlinkHref="#gentle-wave" x="48" y="7" fill="#01040799 #00000063" />
                     </g>
                 </svg>
-            </div>
+            </div> */}
 
             <div id="flex_containerSocials" className={styles.flex_containerSocials}>
                 <div><a href="https://www.linkedin.com/company/edc-zhcet-amu/?originalSubdomain=in " target="_blank">

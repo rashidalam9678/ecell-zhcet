@@ -7,9 +7,7 @@ import * as yup from 'yup';
 import { collection, addDoc } from "firebase/firestore"
 import { db } from "../firebase/config"
 
-
-
-const Footer = () => {
+  const Footer = () => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [query, setQuery] = useState("")
