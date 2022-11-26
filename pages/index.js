@@ -11,7 +11,7 @@ import { getAllActivities } from "../constants/event-data";
 export default function Home() {
 
 const activities= getAllActivities()
-
+      
   return (
     <div className={styles.container}>
       <Head>
