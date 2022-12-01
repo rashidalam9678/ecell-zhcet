@@ -201,7 +201,7 @@ export default function Register() {
                     <p>1.The membership fees for the session 2022-23 is <strong>Rs 150.</strong></p>
                     <p>2. Students have to pay the required fees on the UPI Id: <strong>alammobashshir-2@okicici </strong>(beneficiery name: Mohammad Mobashshir) and take the screenshot & transaction id to fill in the given google form.</p>
                     <p>3. After successfull registration, you will hear from our team with in 48 hours.</p>
-                    <p>4. Last date of registration is <strong>November 30, 2022</strong></p>
+                    <p>4. Last date of registration is <strong>December 3, 2022</strong></p>
                     <p>5. If case of any query, you can mail us at: <strong>edcell.zhcet@gmail.com </strong> or directly call us at +917895100121.</p>
                 </div>
                 <p className={styles.link}>Google Form :
