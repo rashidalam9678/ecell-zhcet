@@ -10,7 +10,7 @@ function AllEventsPage() {
   return (
     <div className={styles.event_container}>
       {/* <EventList items={events} /> */}
-      <h1>Coming Soon...</h1>
+      <h1></h1>
     </div>
   )
 }

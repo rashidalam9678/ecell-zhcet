@@ -196,7 +196,7 @@ export default function Register() {
         <>
             <div className={styles.container}>
                 <h1>Cell Membership Registration for 2022-23</h1>
-                <div>
+                {/* <div>
                     <h3>Instructions:</h3>
                     <p>1.The membership fees for the session 2022-23 is <strong>Rs 150.</strong></p>
                     <p>2. Students have to pay the required fees on the UPI Id: <strong>alammobashshir-2@okicici </strong>(beneficiery name: Mohammad Mobashshir) and take the screenshot & transaction id to fill in the given google form.</p>
@@ -206,7 +206,8 @@ export default function Register() {
                 </div>
                 <p className={styles.link}>Google Form :
                     <a href="https://forms.gle/y6u9qAMvU94bwgUq6" target="_blank"> <span>Register Now</span></a>
-                </p>
+                </p> */}
+                <p>Registrations are closed 2022, please wait next opening time.</p>
             </div>
         </>
     );
